@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// variables
+$displayFlex: flex;
+$bgImgSectionOne: url("./assets/images/pic-1.jpg");
+//header css starts
+.header-container {
+    border: solid grey;
+    display: $displayFlex;
+    justify-content: space-around;
+    padding: 15px;
+    ul {
+        display: $displayFlex;
+        li {
+            list-style: none;
+            margin: 0 11px;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+//header css ends
+//section one css starts
+.section-one {
+    background-image: $bgImgSectionOne;
+}
+
+// url("./assets/images/pic-2.jpg");
+// // }
