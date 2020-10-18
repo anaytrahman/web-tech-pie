@@ -11,6 +11,8 @@
     }
     
     // variables
+    $bgClrBlue: #4f90ec;
+    $bgClrDarkBlue: blue;
     $bgClrWhite: white;
     $textClrWhite: white;
     $displayFlex: flex;
@@ -27,6 +29,10 @@
     
     @mixin text-clr($textClr) {
         color: $textClr;
+    }
+    
+    @mixin padding($padding) {
+        padding: $padding;
     }
     
     //header 
@@ -57,10 +63,14 @@
                     @extend .hover-effect;
                 }
                 .icon-wrapper {
-                    background-color: #4f90ec;
+                    background-color: $bgClrBlue;
                     width: 14%;
                     border-radius: 0px 0px 35px 8px;
                     padding: 3px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $bgClrWhite;
+                    }
                 }
                 width: 30%;
                 @include border-radius(5px);
@@ -79,6 +89,18 @@
                         //word-spacing: 1px;
                         line-height: 1.9;
                     }
+                }
+            }
+        }
+        .all-service-btn-wrapper {
+            margin: 30px 0;
+            a {
+                background-color: $bgClrDarkBlue;
+                @include padding(5px);
+                @include border-radius(2px);
+                color: $textClrWhite;
+                &:hover {
+                    background-color: $bgClrBlue;
                 }
             }
         }
