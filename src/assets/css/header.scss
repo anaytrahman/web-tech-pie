@@ -1,0 +1,20 @@
+.header-container {
+    display: $displayFlex;
+    justify-content: space-around;
+    padding: 38px;
+    ul {
+        display: $displayFlex;
+        li {
+            list-style: none;
+            margin: 0 11px;
+            a {
+                @include border-radius(5px);
+                @include text-clr(black);
+                padding: 5px;
+                &:hover {
+                    @extend .hover-effect;
+                }
+            }
+        }
+    }
+}

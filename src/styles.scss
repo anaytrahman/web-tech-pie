@@ -1,36 +1,88 @@
-/* You can add global styles to this file, and also import other style files */
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-// variables
-$displayFlex: flex;
-$bgImgSectionOne: url("./assets/images/pic-1.jpg");
-//header css starts
-.header-container {
-    border: solid grey;
-    display: $displayFlex;
-    justify-content: space-around;
-    padding: 15px;
-    ul {
-        display: $displayFlex;
-        li {
-            list-style: none;
-            margin: 0 11px;
-            a {
-                text-decoration: none;
+    /* You can add global styles to this file, and also import other style files */
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    // variables
+    $bgClrWhite: white;
+    $textClrWhite: white;
+    $displayFlex: flex;
+    $bgImgSectionOne: url("./assets/images/pic-1.jpg");
+    //all selectors
+    a {
+        text-decoration: none;
+    }
+    
+    //all mixin
+    @mixin border-radius($radius) {
+        border-radius: $radius;
+    }
+    
+    @mixin text-clr($textClr) {
+        color: $textClr;
+    }
+    
+    //header 
+    @import "./assets/css/header.scss";
+    //section one
+    @import "./assets/css/section-one.scss";
+    //classes
+    .hover-effect {
+        background-color: blue;
+        color: $textClrWhite;
+        transition: 0.9s all ease;
+    }
+    
+    //section two
+    .section-two {
+        padding: 20px 2px;
+        .servie-heading-wrapper {
+            width: 13%;
+            margin: 0 auto;
+            margin-bottom: 15px;
+        }
+        .details-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .details-boxes {
+                &:hover {
+                    @extend .hover-effect;
+                }
+                .icon-wrapper {
+                    background-color: #4f90ec;
+                    width: 14%;
+                    border-radius: 0px 0px 35px 8px;
+                    padding: 3px;
+                }
+                width: 30%;
+                @include border-radius(5px);
+                border: solid grey 0.2px;
+                img {
+                    width: 100%;
+                    max-width: 30px;
+                    // filter: grayscale(10%);
+                }
+                .about-work {
+                    padding: 10px 12px;
+                    h2 {
+                        margin: 10px 0px;
+                    }
+                    p {
+                        //word-spacing: 1px;
+                        line-height: 1.9;
+                    }
+                }
             }
         }
     }
-}
-
-//header css ends
-//section one css starts
-.section-one {
-    background-image: $bgImgSectionOne;
-}
-
-// url("./assets/images/pic-2.jpg");
-// // }
+    
+    // url("./assets/images/pic-2.jpg");
+    // // }

@@ -1,0 +1,37 @@
+.section-one {
+    // background-image: $bgImgSectionOne;
+    background-color: rgba(206, 194, 194, 0.705);
+    height: 300px;
+    position: relative;
+    .popup-wrapper {
+        @include border-radius(5px);
+        max-width: 32%;
+        /* border: solid; */
+        padding: 13px;
+        background-color: white;
+        box-shadow: 2px 2px 1px 1px white;
+        position: absolute;
+        top: 12%;
+        left: 7%;
+        .popup-headings {
+            p {
+                margin: 30px 0;
+            }
+        }
+        .popup-btn-wrapper {
+            .btn {
+                border: solid grey 0.5px;
+                padding: 7px 12px;
+                @include text-clr(black);
+                @include border-radius(3px);
+                &:hover {
+                    @extend .hover-effect;
+                }
+                &:nth-last-child(2) {
+                    margin-right: 10px;
+                }
+                &:nth-last-child(2) {}
+            }
+        }
+    }
+}
