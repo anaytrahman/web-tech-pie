@@ -35,30 +35,51 @@
         padding: $padding;
     }
     
+    @mixin line-height($lineHeight) {
+        line-height: $lineHeight;
+    }
+    
     //header 
     @import "./assets/css/header.scss";
     //section one
     @import "./assets/css/section-one.scss";
-    //classes
+    //classes for extend
     .hover-effect {
         background-color: blue;
         color: $textClrWhite;
         transition: 0.9s all ease;
     }
     
+    .img-icon-set {
+        width: 100%;
+        max-width: 30px;
+    }
+    
+    .text-align {
+        text-align: center;
+    }
+    
+    .flexWrp-spaceEvenly {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    
     //section two
     .section-two {
         padding: 20px 2px;
         .servie-heading-wrapper {
-            width: 13%;
-            margin: 0 auto;
+            @extend .text-align;
             margin-bottom: 15px;
         }
         .details-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
+            display: $displayFlex;
+            @extend .flexWrp-spaceEvenly;
+            // flex-wrap: wrap;
+            // justify-content: space-evenly;
             .details-boxes {
+                width: 30%;
+                @include border-radius(5px);
+                border: solid rgb(190, 182, 182) 0.2px;
                 &:hover {
                     @extend .hover-effect;
                 }
@@ -72,35 +93,60 @@
                         background-color: $bgClrWhite;
                     }
                 }
-                width: 30%;
-                @include border-radius(5px);
-                border: solid grey 0.2px;
                 img {
-                    width: 100%;
-                    max-width: 30px;
+                    @extend .img-icon-set;
+                    // width: 100%;
+                    // max-width: 30px;
                     // filter: grayscale(10%);
                 }
                 .about-work {
                     padding: 10px 12px;
                     h2 {
                         margin: 10px 0px;
+                        text-align: center;
                     }
                     p {
-                        //word-spacing: 1px;
-                        line-height: 1.9;
+                        @include line-height(1.9); //word-spacing: 1px;
                     }
                 }
             }
         }
         .all-service-btn-wrapper {
+            @extend .text-align;
             margin: 30px 0;
             a {
                 background-color: $bgClrDarkBlue;
-                @include padding(5px);
+                @include padding(7px 13px);
                 @include border-radius(2px);
                 color: $textClrWhite;
                 &:hover {
                     background-color: $bgClrBlue;
+                }
+            }
+        }
+    }
+    
+    //section three
+    .section-three {
+        .box-wrapper {
+            background: #8d8a8a26;
+            padding: 10px;
+            display: $displayFlex;
+            @extend .flexWrp-spaceEvenly;
+            .boxes {
+                @include padding(20px);
+                width: 18%;
+                @include border-radius(5px);
+                box-shadow: 2px 2px 5px 0px #4a4545b0;
+                background: white;
+                h2 {
+                    margin: 10px 0;
+                }
+                P {
+                    @include line-height(1.8)
+                }
+                img {
+                    @extend .img-icon-set;
                 }
             }
         }
