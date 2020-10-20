@@ -1,156 +1,134 @@
-    /* You can add global styles to this file, and also import other style files */
-    
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    
-    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-    body {
-        font-family: 'Roboto', sans-serif;
-    }
-    
-    // variables
-    $bgClrBlue: #4f90ec;
-    $bgClrDarkBlue: blue;
-    $bgClrWhite: white;
-    $textClrWhite: white;
-    $displayFlex: flex;
-    $bgImgSectionOne: url("./assets/images/pic-1.jpg");
-    //all selectors
-    a {
-        text-decoration: none;
-    }
-    
-    //all mixin
-    @mixin border-radius($radius) {
-        border-radius: $radius;
-    }
-    
-    @mixin text-clr($textClr) {
-        color: $textClr;
-    }
-    
-    @mixin padding($padding) {
-        padding: $padding;
-    }
-    
-    @mixin line-height($lineHeight) {
-        line-height: $lineHeight;
-    }
-    
-    //header 
-    @import "./assets/css/header.scss";
-    //section one
-    @import "./assets/css/section-one.scss";
-    //classes for extend
-    .hover-effect {
-        background-color: blue;
-        color: $textClrWhite;
-        transition: 0.9s all ease;
-    }
-    
-    .img-icon-set {
-        width: 100%;
-        max-width: 30px;
-    }
-    
-    .text-align {
-        text-align: center;
-    }
-    
-    .flexWrp-spaceEvenly {
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-    
-    //section two
-    .section-two {
-        padding: 20px 2px;
-        .servie-heading-wrapper {
-            @extend .text-align;
-            margin-bottom: 15px;
+        /* You can add global styles to this file, and also import other style files */
+        
+        * {
+            margin: 0;
+            padding: 0;
         }
-        .details-container {
-            display: $displayFlex;
-            @extend .flexWrp-spaceEvenly;
-            // flex-wrap: wrap;
-            // justify-content: space-evenly;
-            .details-boxes {
-                width: 30%;
-                @include border-radius(5px);
-                border: solid rgb(190, 182, 182) 0.2px;
-                &:hover {
-                    @extend .hover-effect;
-                }
-                .icon-wrapper {
-                    background-color: $bgClrBlue;
-                    width: 14%;
-                    border-radius: 0px 0px 35px 8px;
-                    padding: 3px;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: $bgClrWhite;
+        
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        // variables
+        $bgClrBlue: #4f90ec;
+        $bgClrDarkBlue: blue;
+        $bgClrWhite: white;
+        $textClrWhite: white;
+        $displayFlex: flex;
+        $bgImgSectionOne: url("./assets/images/pic-1.jpg");
+        //all selectors
+        a {
+            text-decoration: none;
+        }
+        
+        //all mixin
+        @mixin border-radius($radius) {
+            border-radius: $radius;
+        }
+        
+        // for text color
+        @mixin text-clr($textClr) {
+            color: $textClr;
+        }
+        
+        // for padding
+        @mixin padding($padding) {
+            padding: $padding;
+        }
+        
+        // for line height
+        @mixin line-height($lineHeight) {
+            line-height: $lineHeight;
+        }
+        
+        //  img width and height 
+        @mixin imgWidthHeight($width,
+        $height) {
+            width: $width;
+            height: $height;
+        }
+        
+        //margin
+        @mixin margin($margin) {
+            margin: $margin;
+        }
+        
+        //classes for extend
+        .hover-effect {
+            background-color: blue;
+            color: $textClrWhite;
+            transition: 0.9s all ease;
+        }
+        
+        .img-icon-set {
+            width: 100%;
+            max-width: 30px;
+        }
+        
+        // .cursor-pointer {
+        //     cursor: pointer;
+        // }
+        .text-align {
+            text-align: center;
+        }
+        
+        .flexWrp-spaceEvenly {
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        
+        //header 
+        @import "./assets/css/header.scss";
+        //section one
+        @import "./assets/css/section-one.scss";
+        //section two
+        @import "./assets/css/section-two.scss";
+        //section three
+        @import "./assets/css/section-three.scss";
+        //section four
+        .section-four {
+            @include padding(6rem 5px);
+            .servie-heading-wrapper {
+                @extend .text-align;
+                @include margin(20px);
+            }
+            .profile-container {
+                display: $displayFlex;
+                @extend .flexWrp-spaceEvenly;
+                .profile-wrapper {
+                    width: 20%;
+                    .photo-wrapper {
+                        img {
+                            @include imgWidthHeight(100%,
+                            220px);
+                            border-radius: 5px;
+                        }
                     }
-                }
-                img {
-                    @extend .img-icon-set;
-                    // width: 100%;
-                    // max-width: 30px;
-                    // filter: grayscale(10%);
-                }
-                .about-work {
-                    padding: 10px 12px;
-                    h2 {
-                        margin: 10px 0px;
-                        text-align: center;
-                    }
-                    p {
-                        @include line-height(1.9); //word-spacing: 1px;
+                    .details-container {
+                        @extend .text-align;
+                        .details-wrapper {
+                            @include margin(10px 2px);
+                            h5 {
+                                margin: 5px 0;
+                                color: #ada2a2e8;
+                                font-weight: 100;
+                            }
+                        }
+                        .social-wrapper {
+                            .social-icon {
+                                @include imgWidthHeight(8%,
+                                0%);
+                                margin: 2px;
+                                &:hover {
+                                    opacity: 60%;
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
-        .all-service-btn-wrapper {
-            @extend .text-align;
-            margin: 30px 0;
-            a {
-                background-color: $bgClrDarkBlue;
-                @include padding(7px 13px);
-                @include border-radius(2px);
-                color: $textClrWhite;
-                &:hover {
-                    background-color: $bgClrBlue;
-                }
-            }
-        }
-    }
-    
-    //section three
-    .section-three {
-        .box-wrapper {
-            background: #8d8a8a26;
-            padding: 10px;
-            display: $displayFlex;
-            @extend .flexWrp-spaceEvenly;
-            .boxes {
-                @include padding(20px);
-                width: 18%;
-                @include border-radius(5px);
-                box-shadow: 2px 2px 5px 0px #4a4545b0;
-                background: white;
-                h2 {
-                    margin: 10px 0;
-                }
-                P {
-                    @include line-height(1.8)
-                }
-                img {
-                    @extend .img-icon-set;
-                }
-            }
-        }
-    }
-    
-    // url("./assets/images/pic-2.jpg");
-    // // }
+        
+        // url("./assets/images/pic-2.jpg");
+        // // }

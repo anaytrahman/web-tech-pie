@@ -1,0 +1,28 @@
+.section-three {
+    // @include padding(6rem 0);
+    .box-wrapper {
+        background: #8d8a8a26;
+        @include padding(6rem 10px);
+        display: $displayFlex;
+        @extend .flexWrp-spaceEvenly;
+        .boxes {
+            @include padding(20px);
+            width: 18%;
+            @include border-radius(5px);
+            box-shadow: 2px 2px 5px 0px #4a4545b0;
+            background: white;
+            h2 {
+                margin: 10px 0;
+            }
+            P {
+                @include line-height(1.8)
+            }
+            img {
+                @extend .img-icon-set;
+                &:hover {
+                    opacity: 60%;
+                }
+            }
+        }
+    }
+}
