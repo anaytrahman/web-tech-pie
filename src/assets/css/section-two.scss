@@ -1,10 +1,6 @@
 .section-two {
     margin: 20px 1px;
     padding: 20px 2px;
-    .servie-heading-wrapper {
-        @extend .text-align;
-        margin-bottom: 15px;
-    }
     .details-container {
         display: $displayFlex;
         @extend .flexWrp-spaceEvenly;
