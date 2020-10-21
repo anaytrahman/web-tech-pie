@@ -10,75 +10,21 @@
             font-family: 'Roboto', sans-serif;
         }
         
-        // variables
-        $bgClrBlue: #4f90ec;
-        $bgClrDarkBlue: blue;
-        $bgClrWhite: white;
-        $textClrWhite: white;
-        $displayFlex: flex;
-        $bgImgSectionOne: url("./assets/images/pic-1.jpg");
         //all selectors
         a {
             text-decoration: none;
         }
+        /*  -------------all variables  css --------------*/
         
-        //all mixin
-        @mixin border-radius($radius) {
-            border-radius: $radius;
-        }
+        @import "./assets/css/all-variables.scss";
+        /*  -------------all class  css for extend--------------*/
         
-        // for text color
-        @mixin text-clr($textClr) {
-            color: $textClr;
-        }
+        @import "./assets/css/all-class.scss";
+        /*  -------------mixin css--------------*/
         
-        // for padding
-        @mixin padding($padding) {
-            padding: $padding;
-        }
+        @import "./assets/css/mixin.scss";
+        /*  ------------page css--------------*/
         
-        // for line height
-        @mixin line-height($lineHeight) {
-            line-height: $lineHeight;
-        }
-        
-        //  img width and height 
-        @mixin imgWidthHeight($width,
-        $height) {
-            width: $width;
-            height: $height;
-        }
-        
-        //margin
-        @mixin margin($margin) {
-            margin: $margin;
-        }
-        
-        //classes for extend
-        .hover-effect {
-            background-color: blue;
-            color: $textClrWhite;
-            transition: 0.9s all ease;
-        }
-        
-        .img-icon-set {
-            width: 100%;
-            max-width: 30px;
-        }
-        
-        // .cursor-pointer {
-        //     cursor: pointer;
-        // }
-        .text-align {
-            text-align: center;
-        }
-        
-        .flexWrp-spaceEvenly {
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-        }
-        
-        //header 
         @import "./assets/css/header.scss";
         //section one
         @import "./assets/css/section-one.scss";
@@ -87,48 +33,54 @@
         //section three
         @import "./assets/css/section-three.scss";
         //section four
-        .section-four {
-            @include padding(6rem 5px);
-            .servie-heading-wrapper {
+        @import "./assets/css/section-four.scss";
+        /*section 5*/
+        
+        .section-five {
+            @extend .padding;
+            .team-details-wrapper {
                 @extend .text-align;
-                @include margin(20px);
             }
-            .profile-container {
+            .team-details-wrapper {
+                @include padding(8px 65px);
+                .name-position {
+                    margin: 14px;
+                }
+                h5 {
+                    color: rgb(31, 30, 30);
+                    @extend .font-weight-100;
+                    margin: 10px 0;
+                }
+            }
+            .team-profile-container {
                 display: $displayFlex;
                 @extend .flexWrp-spaceEvenly;
+                margin: 20px 0;
                 .profile-wrapper {
-                    width: 20%;
-                    .photo-wrapper {
-                        img {
-                            @include imgWidthHeight(100%,
-                            220px);
-                            border-radius: 5px;
-                        }
+                    @include padding(12px);
+                    width: 25%;
+                    @include boxShadow(2px 2px 5px 0px #4a4545b0);
+                    @include border-radius(5px);
+                    p {
+                        font-style: italic;
+                        font-size: 14px;
+                        line-height: 1.5;
                     }
-                    .details-container {
-                        @extend .text-align;
-                        .details-wrapper {
-                            @include margin(10px 2px);
-                            h5 {
-                                margin: 5px 0;
-                                color: #ada2a2e8;
-                                font-weight: 100;
-                            }
+                    .intro-wrapper {
+                        display: $displayFlex;
+                        h6 {
+                            margin: 5px 0;
+                            color: $textClrGrey;
                         }
-                        .social-wrapper {
-                            .social-icon {
-                                @include imgWidthHeight(8%,
-                                0%);
-                                margin: 2px;
-                                &:hover {
-                                    opacity: 60%;
-                                }
+                        .img-wrapper {
+                            width: 30%;
+                            margin: 0 20px 20px 0px;
+                            img {
+                                @include imgWidthHeight(100%,
+                                100%)
                             }
                         }
                     }
                 }
             }
         }
-        
-        // url("./assets/images/pic-2.jpg");
-        // // }

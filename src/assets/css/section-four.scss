@@ -1,0 +1,40 @@
+.section-four {
+    @extend .padding;
+    .servie-heading-wrapper {
+        @extend .text-align;
+        @include margin(20px);
+    }
+    .profile-container {
+        display: $displayFlex;
+        @extend .flexWrp-spaceEvenly;
+        .profile-wrapper {
+            width: 20%;
+            .photo-wrapper {
+                img {
+                    @include imgWidthHeight(100%, 220px);
+                    border-radius: 5px;
+                }
+            }
+            .details-container {
+                @extend .text-align;
+                .details-wrapper {
+                    @include margin(10px 2px);
+                    h5 {
+                        margin: 5px 0;
+                        color: #ada2a2e8;
+                        font-weight: 100;
+                    }
+                }
+                .social-wrapper {
+                    .social-icon {
+                        @include imgWidthHeight(6%, 0%);
+                        margin: 2px;
+                        &:hover {
+                            opacity: 60%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
