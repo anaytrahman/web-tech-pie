@@ -1,0 +1,51 @@
+.section-five {
+    margin: $marginSevenRem;
+    @extend .padding;
+    .team-details-wrapper {
+        @extend .text-align;
+    }
+    .team-details-wrapper {
+        @include padding(8px 65px);
+        .name-position {
+            margin: 14px;
+        }
+        h5 {
+            color: rgb(31, 30, 30);
+            @extend .font-weight-100;
+            margin: 10px 0;
+        }
+    }
+    .team-profile-container {
+        display: $displayFlex;
+        @extend .flexWrp-spaceEvenly;
+        margin: 20px 0;
+        .profile-wrapper {
+            font-family: 'Commissioner', sans-serif;
+            @include padding(12px);
+            width: 25%;
+            @include boxShadow(2px 2px 5px 0px #4a4545b0);
+            @include border-radius(5px);
+            &:hover {
+                cursor: pointer;
+            }
+            p {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            .intro-wrapper {
+                display: $displayFlex;
+                h6 {
+                    margin: 5px 0;
+                    color: $textClrGrey;
+                }
+                .img-wrapper {
+                    width: 30%;
+                    margin: 0 20px 20px 0px;
+                    img {
+                        @include imgWidthHeight(100%, 100%)
+                    }
+                }
+            }
+        }
+    }
+}

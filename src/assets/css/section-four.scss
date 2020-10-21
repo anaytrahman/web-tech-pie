@@ -1,9 +1,5 @@
 .section-four {
     @extend .padding;
-    .servie-heading-wrapper {
-        @extend .text-align;
-        @include margin(20px);
-    }
     .profile-container {
         display: $displayFlex;
         @extend .flexWrp-spaceEvenly;

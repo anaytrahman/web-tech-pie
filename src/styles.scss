@@ -6,6 +6,7 @@
         }
         
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@200&display=swap');
         body {
             font-family: 'Roboto', sans-serif;
         }
@@ -36,51 +37,40 @@
         @import "./assets/css/section-four.scss";
         /*section 5*/
         
-        .section-five {
-            @extend .padding;
-            .team-details-wrapper {
-                @extend .text-align;
+        @import "./assets/css/section-five.scss";
+        //main-heading css
+        //containing all section's heading css
+        .main-heading-wrapper {
+            @extend .text-align;
+            @include margin(20px);
+            a {
+                color: blue;
             }
-            .team-details-wrapper {
-                @include padding(8px 65px);
-                .name-position {
-                    margin: 14px;
-                }
-                h5 {
-                    color: rgb(31, 30, 30);
-                    @extend .font-weight-100;
-                    margin: 10px 0;
-                }
+            h2 {
+                margin: 10px 0;
             }
-            .team-profile-container {
+        }
+        
+        .section-six {
+            // margin: 7rem 0;
+            margin: $marginSevenRem;
+            .project-container {
                 display: $displayFlex;
                 @extend .flexWrp-spaceEvenly;
-                margin: 20px 0;
-                .profile-wrapper {
-                    @include padding(12px);
+                .one {
+                    background-image: url(./../src/assets/images/pic-2.jpg);
+                }
+                .two {
+                    background-image: url(./../src/assets/images/pic-3.jpg);
+                }
+                .three {
+                    background-image: url(./../src/assets/images/pic-1.jpg);
+                }
+                .project-wrapper {
                     width: 25%;
-                    @include boxShadow(2px 2px 5px 0px #4a4545b0);
-                    @include border-radius(5px);
-                    p {
-                        font-style: italic;
-                        font-size: 14px;
-                        line-height: 1.5;
-                    }
-                    .intro-wrapper {
-                        display: $displayFlex;
-                        h6 {
-                            margin: 5px 0;
-                            color: $textClrGrey;
-                        }
-                        .img-wrapper {
-                            width: 30%;
-                            margin: 0 20px 20px 0px;
-                            img {
-                                @include imgWidthHeight(100%,
-                                100%)
-                            }
-                        }
-                    }
+                    border: solid;
+                    height: 400px;
+                    @extend .bgCover;
                 }
             }
         }
