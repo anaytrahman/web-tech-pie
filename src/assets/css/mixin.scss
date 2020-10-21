@@ -1,0 +1,34 @@
+      //all mixin
+      @mixin border-radius($radius) {
+          border-radius: $radius;
+      }
+      
+      // for text color
+      @mixin text-clr($textClr) {
+          color: $textClr;
+      }
+      
+      // for padding
+      @mixin padding($padding) {
+          padding: $padding;
+      }
+      
+      // for line height
+      @mixin line-height($lineHeight) {
+          line-height: $lineHeight;
+      }
+      
+      //  img width and height 
+      @mixin imgWidthHeight($width, $height) {
+          width: $width;
+          height: $height;
+      }
+      
+      @mixin boxShadow($boxShadow) {
+          box-shadow: $boxShadow;
+      }
+      
+      //margin
+      @mixin margin($margin) {
+          margin: $margin;
+      }
