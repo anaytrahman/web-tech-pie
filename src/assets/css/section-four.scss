@@ -22,11 +22,14 @@
                     }
                 }
                 .social-wrapper {
-                    .social-icon {
-                        @include imgWidthHeight(6%, 0%);
-                        margin: 2px;
+                    a {
+                        margin: 3px;
                         &:hover {
                             opacity: 60%;
+                        }
+                        i {
+                            font-size: 20px;
+                            color: red;
                         }
                     }
                 }
