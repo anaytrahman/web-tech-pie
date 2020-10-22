@@ -1,6 +1,6 @@
 .section-two {
     margin: 20px 1px;
-    padding: 20px 2px;
+    @extend .padding;
     .details-container {
         display: $displayFlex;
         @extend .flexWrp-spaceEvenly;

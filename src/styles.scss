@@ -15,6 +15,10 @@
         a {
             text-decoration: none;
         }
+        
+        li {
+            list-style: none;
+        }
         /*  -------------all variables  css --------------*/
         
         @import "./assets/css/all-variables.scss";
@@ -26,6 +30,7 @@
         @import "./assets/css/mixin.scss";
         /*  ------------page css--------------*/
         
+        //header
         @import "./assets/css/header.scss";
         //section one
         @import "./assets/css/section-one.scss";
@@ -35,9 +40,12 @@
         @import "./assets/css/section-three.scss";
         //section four
         @import "./assets/css/section-four.scss";
-        /*section 5*/
+        /*section five*/
         
         @import "./assets/css/section-five.scss";
+        /*section six*/
+        
+        @import "./assets/css/section-six.scss";
         //main-heading css
         //containing all section's heading css
         .main-heading-wrapper {
@@ -51,26 +59,46 @@
             }
         }
         
-        .section-six {
-            // margin: 7rem 0;
-            margin: $marginSevenRem;
-            .project-container {
+        //variables for padding
+        $padding: 6px 27px;
+        .footer {
+            color: $textClrWhite;
+            .all-divs-wrapper {
+                @extend .padding;
                 display: $displayFlex;
                 @extend .flexWrp-spaceEvenly;
-                .one {
-                    background-image: url(./../src/assets/images/pic-2.jpg);
+                background: #000000e3;
+                .more-details-wrapper {
+                    @include line-height(1.9);
+                    font-family: $fontFamCommiSans;
+                    .input-wrapper {
+                        position: relative;
+                        input {
+                            @include border-radius(4px);
+                            padding: $padding;
+                            border: none;
+                        }
+                        a {
+                            padding: 3.1px 20px;
+                            background: #970606;
+                            position: absolute;
+                            top: 3px;
+                            right: 0px;
+                            border-radius: 0px 3px 3px 0px;
+                            font-size: 12px
+                        }
+                    }
+                    h3 {
+                        margin: 10px 0;
+                    }
+                    a {
+                        color: $textClrGrey;
+                    }
                 }
-                .two {
-                    background-image: url(./../src/assets/images/pic-3.jpg);
-                }
-                .three {
-                    background-image: url(./../src/assets/images/pic-1.jpg);
-                }
-                .project-wrapper {
-                    width: 25%;
-                    border: solid;
-                    height: 400px;
-                    @extend .bgCover;
-                }
+            }
+            .social-links {
+                background: rgb(12, 12, 12);
+                height: 60px;
+                width: 100%;
             }
         }

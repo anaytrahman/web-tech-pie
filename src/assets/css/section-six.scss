@@ -1,0 +1,23 @@
+.section-six {
+    @extend .padding;
+    margin: $marginSevenRem;
+    .project-container {
+        display: $displayFlex;
+        @extend .flexWrp-spaceEvenly;
+        .one {
+            background-image: url(./../images/pic-1.jpg);
+        }
+        .two {
+            background-image: url(./../images/pic-3.jpg);
+        }
+        .three {
+            background-image: url(./../images/pic-1.jpg);
+        }
+        .project-wrapper {
+            width: 25%;
+            border: solid;
+            height: 400px;
+            @extend .bgCover;
+        }
+    }
+}

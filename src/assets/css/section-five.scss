@@ -20,7 +20,7 @@
         @extend .flexWrp-spaceEvenly;
         margin: 20px 0;
         .profile-wrapper {
-            font-family: 'Commissioner', sans-serif;
+            font-family: $fontFamCommiSans;
             @include padding(12px);
             width: 25%;
             @include boxShadow(2px 2px 5px 0px #4a4545b0);
