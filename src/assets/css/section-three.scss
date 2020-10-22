@@ -1,5 +1,5 @@
 .section-three {
-    // @include padding(6rem 0);
+    @extend .padding;
     .box-wrapper {
         background: #8d8a8a26;
         @include padding(6rem 10px);
